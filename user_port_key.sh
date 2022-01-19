@@ -67,6 +67,9 @@ sed -i -e '/^root/a'$your_user' ALL=(ALL) ALL' /etc/sudoers
 echo "$user_password" | passwd --stdin $your_user
 
 
+#curl -O https://raw.githubusercontent.com/doudouhn62/sengtos/master/user_port_key.sh && bash user_port_key.sh
+#cat user_port_key.sh
+
 #(恢复)使用自定义用户名及端口和密钥登录
 #sed -i -e 's@^PasswordAuthentication.*@PasswordAuthentication no@g' -e 's@^#\?PermitRootLogin.*@PermitRootLogin no@g' /etc/ssh/sshd_config -e 's@^#\?Port\(.*\)@Port\1@g' ; systemctl restart sshd
 
