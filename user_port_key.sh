@@ -23,7 +23,7 @@ sed -i -e 's@\(.*X11Forwarding.*\)@#\1@g' /etc/ssh/sshd_config
 
 echo -e "RSAAuthentication yes\nPubkeyAuthentication yes" >> /etc/ssh/sshd_config
 
-echo -e "ClientAliveInterval 60\nClientAliveCountMax 3\nMaxAuthTries 10" >> /etc/ssh/sshd_config
+echo -e "ClientAliveInterval 60\nClientAliveCountMax 5\nMaxAuthTries 5" >> /etc/ssh/sshd_config
 
 systemctl restart sshd
 
