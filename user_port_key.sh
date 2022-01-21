@@ -2,6 +2,15 @@
 #cat /etc/ssh/sshd_config
 #rm -rf /root/.ssh
 #rm -rf /home/$your_user/.ssh
+systemctl stop firewalld ; systemctl disable firewalld
+
+yum -y install iptables-services iptables
+
+systemctl restart iptables ; systemctl enable iptables
+
+iptables -F ; service iptables save
+
+
 rm -rf .ssh
 
 mkdir .ssh
