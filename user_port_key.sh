@@ -11,6 +11,9 @@ systemctl restart iptables ; systemctl enable iptables
 iptables -F ; service iptables save
 
 
+sed -i -e 's@^RSAAuthentication yes$@@g' -e 's@^PubkeyAuthentication yes$@@g' -e 's@^ClientAliveInterval 60$@@g' -e 's@^ClientAliveCountMax 5$@@g' -e 's@^MaxAuthTries 5$@@g' /etc/ssh/sshd_config
+
+
 rm -rf .ssh
 
 mkdir .ssh
